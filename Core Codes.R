@@ -322,15 +322,35 @@ aov(data=subset(alldata.dahl, group %in% c("HSD","HSD_isoval")),  DBP~group*Time
 t.test(data=subset(alldata.dahl, Time=="28"), DBP~group, var.equal=T)
 
 # Differences in isovalerylcarnitine
-t.test(data=subset(temp, Group %in% c("Control","HSD")), iso~Group, var.equal=T)
-t.test(data=subset(temp, Group %in% c("Control","HSD_isoval")), iso~Group, var.equal=T)
-t.test(data=subset(temp, Group %in% c("HSD","HSD_isoval")), iso~Group, var.equal=T)
+t.test(data=subset(alldata.dahl, Group %in% c("Control","HSD")), iso~Group, var.equal=T)
+t.test(data=subset(alldata.dahl, Group %in% c("Control","HSD_isoval")), iso~Group, var.equal=T)
+t.test(data=subset(alldata.dahl, Group %in% c("HSD","HSD_isoval")), iso~Group, var.equal=T)
 
 # Differences in the relaxation of mesenteric arteries
 aov(data=alldata.dahl, acetyl~group*con+Error(num/con))
 aov(data=subset(alldata.dahl, group %in% c("HSD","HSD_isoval")), acetyl~group*con+Error(num/con))
 aov(data=alldata.dahl, nitrop~group*con+Error(num/con))
 aov(data=subset(alldata.dahl, group %in% c("HSD","HSD_isoval")), nitrop~group*con+Error(num/con))
+
+# Differences in the Fluorescence intensity of eNOS
+t.test(data=subset(alldata.dahl, Group %in% c("Control","HSD")), eNOS~Group, var.equal=T)
+t.test(data=subset(alldata.dahl, Group %in% c("Control","HSD_isoval")), eNOS~Group, var.equal=T)
+t.test(data=subset(alldata.dahl, Group %in% c("HSD","HSD_isoval")), eNOS~Group, var.equal=T)
+
+# Differences in the Fibrotic area of aorta and kidney
+wilcox.test(data=subset(alldata.dahl, Group %in% c("Control","HSD")), Masson~Group)
+wilcox.test(data=subset(alldata.dahl, Group %in% c("Control","HSD_isoval")), Masson~Group)
+wilcox.test(data=subset(alldata.dahl, Group %in% c("HSD","HSD_isoval")), Masson~Group)
+
+wilcox.test(data=subset(alldata.dahl, Group %in% c("Control","HSD")), sirius~Group)
+wilcox.test(data=subset(alldata.dahl, Group %in% c("Control","HSD_isoval")), sirius~Group)
+wilcox.test(data=subset(alldata.dahl, Group %in% c("HSD","HSD_isoval")), sirius~Group)
+
+# Difference in BP levels of Dahl SS rats in the experiment of oral isovalerylcarnitine
+aov(data=alldata.oraldahl, SBP~group*Time+Error(num/Time))
+aov(data=subset(alldata.oraldahl, group %in% c("HSD","HSD_isoval")),  SBP~group*Time+Error(num/Time))
+t.test(data=subset(alldata.oraldahl, Time=="28"), SBP~group, var.equal=T)
+aov(data=phexp, iso~group*Time+Error(variable/Time))
 
 ### 3) SD rats -----------------------------------------------------------------------------------
 
