@@ -5,5 +5,4 @@ Due to privacy regulations, the complete human data from the two trials and coho
 
 In addition, all data from the animal experiments have been uploaded, and the results generated from these data are consistent with those reported in the article.
 
-No standalone software was developed in this study. All statistical analyses were performed using R (version 4.3.1; R Foundation for Statistical Computing, Vienna, Austria). The core scripts are provided in the file “Core codes.R”. All required R packages can be installed from the Comprehensive R Archive Network (CRAN): https://cran.r-project.org/
-.
+No standalone software was developed in this study. All statistical analyses were performed using R (version 4.3.1; R Foundation for Statistical Computing, Vienna, Austria). The core scripts are provided in the file “Core codes.R”. All required R packages can be installed from the Comprehensive R Archive Network (CRAN): https://cran.r-project.org/.
